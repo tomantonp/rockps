@@ -1,31 +1,38 @@
 
-// function getComputerChoice () {
-  
 
-let computerWins = 0;
-  let playerWins = 0;
+//var playerChoice = document.getElementById("playerChoice").value;
 
-  console.log (playerWins);
-console.log (computerWins);
 
-for (let i = 0; i < 5; i++) {
-  // your code here!
+// document.getElementById("playButton").onclick=function() {
 
+function getComputerChoice () {
   const randomInt = Math.floor (Math.random()*3);
 
-const strings = ["rock", "paper", "scissors"];
+  const strings = ["rock", "paper", "scissors"];
+  
+  const computerChoice = strings[randomInt];
 
-const computerChoice = strings[randomInt];
+  return computerChoice;
 
-console.log (computerChoice);
+}
+
+getComputerChoice ();
+
+document.getElementById("computerChoice").innerHTML=getComputerChoice;
+
+// for (let i = 0; i < 5; i++) {
+  // your code here!
+
+
 
 // }
-
-let playerChoice = window.prompt("choose your weapon");
+playerChoice = document.getElementById("playerChoice").value;
+// let playerChoice = window.prompt("choose your weapon");
 
 console.log (playerChoice);
 
-
+var computerWins = 0;
+var playerWins = 0;
 
 
 // function playRound () {
@@ -33,6 +40,7 @@ console.log (playerChoice);
 if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
   document.write ("You win! The computer chose " +computerChoice);
   playerWins ++;
+  
 }
 
 if (playerChoice == computerChoice ) {
@@ -46,10 +54,18 @@ if (playerChoice == "rock" && computerChoice == "paper" || playerChoice == "pape
 
 // }
 
+document.write("Computer: " +computerWins);
+document.write("Player: " +playerWins);
 
 
-}
+console.log (playerWins);
+console.log (computerWins);
 
+//}
+
+//document.getElementById("cWins").innerHTM=computerWins;
+
+//document.getElementById("pWins").innerHTML=playerWins;
 
 
 
