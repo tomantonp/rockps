@@ -4,17 +4,80 @@
 
 
 // document.getElementById("playButton").onclick=function() {
+// Attach click event listeners to the buttons
 
-function getComputerChoice () {
-  const randomInt = Math.floor (Math.random()*3);
+document.getElementById('rock').addEventListener('click', () => {
+  playRound('rock'); // Call playRound function with player choice
+});
 
-  const strings = ["rock", "paper", "scissors"];
+document.getElementById('paper').addEventListener('click', () => {
+  playRound('paper'); // Call playRound function with player choice
+});
+
+document.getElementById('scissors').addEventListener('click', () => {
+  playRound('scissors'); // Call playRound function with player choice
+});
+
+// Define the playRound function
+function playRound(playerChoice) {
+
+  function getComputerChoice () {
+    const randomInt = Math.floor (Math.random()*3);
   
-  const computerChoice = strings[randomInt];
+    const strings = ["rock", "paper", "scissors"];
+    
+    const computerChoice = strings[randomInt];
+  
+    return computerChoice;
+  
+  }
 
-  return computerChoice;
+
+if (playerChoice == "rock" && getComputerChoice == "scissors" || playerChoice == "paper" && getComputerChoice == "rock" || playerChoice == "scissors" && getComputerChoice == "paper") {
+  document.write ("You win! The computer chose " +getComputerChoice);
+  playerWins ++;
+  
+}
+
+if (playerChoice == getComputerChoice ) {
+  document.write ("You draw. The computer chose " +getComputerChoice ," as well.");
+}
+
+if (playerChoice == "rock" && getComputerChoice == "paper" || playerChoice == "paper" && getComputerChoice == "scissors" || playerChoice == "scissors" && getComputerChoice == "rock") {
+  document.write ("You lose. The computer chose " +getComputerChoice);
+  computerWins ++;
+}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 getComputerChoice ();
 
